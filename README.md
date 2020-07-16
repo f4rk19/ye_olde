@@ -1,24 +1,47 @@
-# README
+# DB design
+## Users table
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Option|
+|————|——-|———-|
+|name|string|null: false, index: true, unique: true|
+|email|string|null: false, index: true, unique: true|
+|image|string|———|
 
-Things you may want to cover:
+### Association
+- has_many :photos
 
-* Ruby version
 
-* System dependencies
+## Photos table
+|Column|Type|Option|
+|————|——-|———-|
+|content|string|null-----|
+|image|string|null—|
+|user|references|foreign_key: true, null: false|
+|hashtag|references|foreign_key: true|
 
-* Configuration
+###Association
+- belongs_to :user
+- has_many:hashtags, through:hashtags_photos
+- has_many:hashtags_photos
 
-* Database creation
 
-* Database initialization
+## Hashtags table
+|Column|Type|Option|
+|————|——-|———-|
+|hashname|string|———|
+|photo|references|foreign_key: true, null:false|
 
-* How to run the test suite
+###Association
+- has_many:photos, through: hashtags_photos
+- has_many:hashtags_photos
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Hashtags_photos table
+|Column|Type|Option|
+|————|——-|———-|
+|photo|references|foreign_key: true, null: false|
+|hashname|references|foreign_key: true, null: false|
 
-* ...
+###Association
+- belongs_to :photo
+- belongs_to:hashtag
