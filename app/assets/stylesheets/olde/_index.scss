@@ -1,0 +1,13 @@
+.header{
+  background-color: black;
+  height: 50px;
+}
+
+.main{
+  background-color: lightblue;
+  height: calc(100vh - 50px);
+    &__image{
+      width: 100vw;
+      height: 100vh;
+  }
+}
