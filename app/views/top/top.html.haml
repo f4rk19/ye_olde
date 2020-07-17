@@ -1,0 +1,28 @@
+.header
+  %ul.header__user-in
+    - if user_signed_in?
+      %li.user-start
+        =link_to "olde#index" do
+          = icon("fas","plane-departure")
+          Start the journy
+    - else
+      %li.user-plus
+        =link_to new_user_registration_path do
+          = icon('fas', 'user-plus')
+          New user registration
+      %li.sign-in
+        =link_to user_session_path do
+          = icon('fas', 'sign-in-alt')
+          Sign in
+
+.main
+  - if user_signed_in?
+    =image_tag "portrait-4130603_1920.jpg", :alt =>"top image",class: "main__image"
+    %p.main__sub-content
+      We can go back to that place.
+  - else
+    = image_tag "vintage-2809976_1920.jpg", :alt =>"top image",class: "main__image"
+    %p.main__sub-content
+      A place that you don't know...
+
+.footer

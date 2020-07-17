@@ -1,0 +1,43 @@
+*{
+  box-sizing: border-box;
+}
+
+.header{
+  background-color: black;
+  height: 80px;
+  &__user-in{
+    display:flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    .user-plus, .sign-in, .user-start{
+      a{
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.main{
+  background-color: lightblue;
+  height: calc(100vh - 110px);
+  position: relative;
+    &__image{
+      width: 100vw;
+      height: calc(100vh - 75px);
+  }
+  &__sub-content{
+    position: absolute;
+    top: calc(75%);
+    left: 33vw;
+    font-family: fantasy;
+    font-size: 36px;
+    color: #ffffff;
+  }
+}
+
+.footer{
+  background-color: black;
+  height: 30px;
+}
