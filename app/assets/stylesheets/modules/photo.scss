@@ -1,0 +1,90 @@
+.main{
+  &__photo-form{
+    form{
+      height: 90px;
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .photo-box{
+        margin: 20px;
+        i{
+          font-size: 50px;
+          color: black;
+        }
+        &__image{
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          .post-image{
+            height: 250px;
+            width: 450px;
+          }
+          &__file{
+            display: none;
+          }
+          p{
+            font-size: 20px;
+            font-family: fantasy;
+          }
+        }
+      }
+      .input-box{
+        width: 100%;
+        display: flex;
+        &__text{
+          height: 100px;
+          width: 100vw;
+          color: #434a54;
+          border-style: none;
+          padding: 0 40px 0 10px;
+          font-family: fantasy;
+          padding: 10px;
+        }
+      }
+      .submit-btn{
+        width: 100px;
+        height: 50px;
+        padding: 10px 30px;
+        margin-top: 20px;
+        background-color: #eff2e5;
+        color: rgb(7, 7, 7);
+        cursor: pointer;
+        font-family: fantasy;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+// _photo
+.photo-frame{
+  width: 80vw;
+  background-color: #ffffff;
+  border: 1px solid black;
+  margin : auto;
+  margin-bottom: 10px;
+  &__photo-info{
+    .user-name{
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .created-at{
+      font-size: 12px;
+      color: lightgray;
+    }
+    .more{
+      .more-tag{
+        background-color: black;
+      }
+    }
+  }
+  &__image{
+    width: 80%;
+  }
+  p{
+    font-size: 16px;
+    border: 1px solid black;
+  }
+}

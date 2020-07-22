@@ -1,0 +1,15 @@
+.header
+  = render 'olde/header'
+.main
+  .main__photos
+    %h2 Your photos
+    = image_tag(@photo.image_url, size:20*20) if @photo.image.present?
+    -if user_signed_in? && current_user.id == @photo.user_id
+      %ul.photo-edit
+        %li.edit-form
+          =link_to edit_photo_path do
+            Edit
+        %li.delete-btn
+          =link_to photo_path, method: :delete do
+            Delete
+.footer

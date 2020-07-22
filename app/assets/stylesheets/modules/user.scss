@@ -23,6 +23,7 @@
   width: 50%;
   font-size: 14px;
   font-weight: 200;
+  font-family: fantasy;
 
   h2 {
     margin-bottom: 10px;
@@ -42,6 +43,7 @@
     margin-top: 40px;
     color: #ffffff;
     background-color: rgba(180, 218, 230, 0.838);
+    font-family: fantasy;
   }
 }
 
@@ -56,14 +58,23 @@
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: 200;
+    font-family: fantasy;
     color: #ffffff;
+    cursor: pointer;
     i {
-      font-size: 11px;
+      font-size: 20px;
     }
     .field_with_errors {
       display: inline-block;
       color: #d65f4c;
       font-weight: 400;
+    }
+    .file-choose{
+      display: none;
+    }
+    p{
+      font-family: fantasy;
+      color: #ffffff;
     }
   }
   &__input--normal {
@@ -106,6 +117,7 @@
   margin-top: 20px;
   color: #fff;
   background-color: #38aef0;
+  font-family: fantasy;
 }
 
 #error_explanation {
@@ -118,6 +130,7 @@
     margin-bottom: 10px;
     color: #d65f4c;
     font-size: 14px;
+    font-family: fantasy;
   }
 
   ul {
@@ -130,5 +143,19 @@
     margin: 0;
     padding: 0;
     font-size: 13px;
+    font-family: fantasy;
+  }
+}
+
+// user-show
+.main{
+  &__photos{
+    text-align: center;
+    h2{
+      font-family: fantasy;
+      font-size: 45px;
+      font-weight: bold;
+      padding: 15px;
+    }
   }
 }
