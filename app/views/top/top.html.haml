@@ -2,7 +2,7 @@
   %ul.header__user-in
     - if user_signed_in?
       %li.user-start
-        =link_to "olde#index" do
+        =link_to hashtags_path do
           = icon("fas","plane-departure")
           Start the journy
     - else
