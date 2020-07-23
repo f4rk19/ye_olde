@@ -24,9 +24,9 @@
   background-color: lightblue;
   height: calc(100vh - 110px);
   position: relative;
-    &__image{
+  &__image{
       width: 100vw;
-      height: calc(100vh - 75px);
+      height: 100vh;
   }
   &__sub-content{
     position: absolute;
@@ -35,6 +35,11 @@
     font-family: fantasy;
     font-size: 36px;
     color: #ffffff;
+  }
+  &__search-form{
+    position: absolute;
+    top: 20%;
+    left: 37%;
   }
 }
 

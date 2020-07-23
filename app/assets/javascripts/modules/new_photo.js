@@ -3,9 +3,7 @@
     function buildHTML(image){
       var html =
       `
-      <div class="photo-box__image">
         <img src="${image}", alt="post" class="post-image">
-      </div>
       `
       return html;
     }
@@ -17,7 +15,6 @@
         var image = this.result;
         var html = buildHTML(image)
         $('.photo-box__image').prepend(html);
-        $('i').remove();
         $('p').remove();
       }
     });

@@ -1,11 +1,8 @@
 .header
-  %ul.header__user-in
-    - if user_signed_in?
-      %li.user-start
-        =link_to hashtags_path do
-          = icon("fas","plane-departure")
-          Start the journy
-    - else
+  - if user_signed_in?
+    =render "olde/header-top"
+  - else
+    %ul.header__user-in
       %li.user-plus
         =link_to new_user_registration_path do
           = icon('fas', 'user-plus')
@@ -24,5 +21,6 @@
     = image_tag "vintage-2809976_1920.jpg", :alt =>"top image",class: "main__image"
     %p.main__sub-content
       A place that you don't know...
-
+  .main__search-form
+    = render 'olde/search'
 .footer

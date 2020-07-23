@@ -6,7 +6,7 @@ class Hashtag < ApplicationRecord
 
   def self.search(search)
     if search
-      Hashtag.where('text LIKE(?)', "%#{search}%")
+      Hashtag.where('hashname LIKE(?)', "%#{search}%")
     else
       Hashtag.all
     end

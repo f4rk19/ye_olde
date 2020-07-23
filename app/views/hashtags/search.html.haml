@@ -1,6 +1,8 @@
 .header
   = render 'olde/header'
 .main
-  %p
-    no list
+  .hashtag-name
+    =@hashtags
+  .search-result
+    =render "photos/photos"
 .footer

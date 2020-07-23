@@ -22,6 +22,7 @@ class Photo < ApplicationRecord
     end
   end
 
+
   validates :content, presence: true
   validates :image, presence: true
 
