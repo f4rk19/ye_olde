@@ -3,14 +3,10 @@
 .main
   .main__photos
     %h2
-      = @name
+      = @hashtag.hashname
     - @photos.each do |photo|
       .photo-frame
         .photo-frame__photo-info
-          .user-name
-            User name :
-            = link_to user_path(@user) do
-              = photo.user.name
           .created-at
             = l photo.created_at
           .detail-form
@@ -19,5 +15,7 @@
         = image_tag photo.image.url, class: 'photo-frame__image'
         %p.photo-frame__content
           = render_with_hashtags(photo.content)
-    = paginate @photos
+  = paginate @photos
+  .page-load-status
+
 .footer

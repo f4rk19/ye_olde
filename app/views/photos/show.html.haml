@@ -2,8 +2,8 @@
   = render 'olde/header'
 .main
   .main__photos
-    %h2 Your photos
-    = image_tag(@photo.image_url, size:20*20) if @photo.image.present?
+    %h2 Photo
+    = render 'photo'
     -if user_signed_in? && current_user.id == @photo.user_id
       %ul.photo-edit
         %li.edit-form

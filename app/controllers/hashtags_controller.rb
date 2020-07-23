@@ -1,13 +1,22 @@
 class HashtagsController < ApplicationController
 
-  before_action:authenticate_user!
-
   def index
+    return nil if params[:keyword] == ""
+    @hashtags = Hashtag.where(['hashname LIKE ?',"#{params[:keyword]}%"]).limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def show
+    @hashtag = Hashtag.find_by!(hashname: params[:hashname])
+    @photos = @hashtag.photos.page(params[:page]).per(10)
   end
 
   def search
     @hashtags = Hashtag.search(params[:keyword])
-    @tag = Hashtag.find_by(hashname: params[:name])
+    @photos = PhotoHashtag.where(hashtag_id: @hashtags).includes(:user)
   end
 
 end

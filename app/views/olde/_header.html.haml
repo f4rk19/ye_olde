@@ -1,31 +1,30 @@
 .header__to-menu
   .to-index
-    = link_to hashtags_path do
+    = link_to root_path do
       =icon("fas","home")
       Ye Olde
   .search-form
-    = form_with url: search_hashtags_path,method: :get, local: true do |f|
-      = f.text_field :keyword, class:'seach-form__text', placeholder:'Seach hashtag'
-      = f.submit value:'Search',class:'search-form__btn'
-.header__drop-menu
-  .drop-btn
-    =icon("fas","bars")
-  %ul.drop-down
-    %li.back-btn
-      =icon("fas","times")
-    %li.new-post
-      = link_to new_photo_path do
-        =icon("fas","feather-alt")
-        To Post
-    %li.user-name
-      =link_to user_path(current_user) do
-        =icon("far","user-circle")
-        =current_user.name
-    %li.edit-btn
-      =link_to edit_user_path(current_user) do
-        =icon("fas","user-edit")
-        Edit user
-    %li.sign-out
-      =link_to  destroy_user_session_path,method: :delete do
-        =icon("fas","sign-out-alt")
-        Sign out
+    =render 'olde/search'
+-if user_signed_in?
+  .header__drop-menu
+    .drop-btn
+      =icon("fas","bars")
+    %ul.drop-down
+      %li.back-btn
+        =icon("fas","times")
+      %li.new-post
+        = link_to new_photo_path do
+          =icon("fas","feather-alt")
+          To Post
+      %li.user-name
+        =link_to user_path(current_user) do
+          =icon("far","user-circle")
+          =current_user.name
+      %li.edit-btn
+        =link_to edit_user_path(current_user) do
+          =icon("fas","user-edit")
+          Edit user
+      %li.sign-out
+        =link_to  destroy_user_session_path,method: :delete do
+          =icon("fas","sign-out-alt")
+          Sign out

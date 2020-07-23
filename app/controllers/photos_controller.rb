@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
 
   def index
-    @photo = Photo.new
+    @photo = Photo.all
   end
 
   def new
@@ -11,8 +11,9 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.create(photo_params)
     if @photo.save
-      redirect_to hashtags_path
+      redirect_to root_path, notice: "Completed"
     else
+      flash.now[:alert] = "Uncompleted"
       render new_photo_path
     end
   end
@@ -44,13 +45,9 @@ class PhotosController < ApplicationController
 
   def hashtags
     @user = current_user
-    @tag = Hashtag.find_by(hashname: params[:name])
+    @tag = Hashtag.find_by(hashname: params[:hashname])
     @photos = @tag.photos.build
     @photo = @tag.photos.page(params[:page])
-  end
-
-  def search
-    @hashtags = Hashtag.search(params[:keyword])
   end
 
   private
