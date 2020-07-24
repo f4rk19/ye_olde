@@ -11,7 +11,7 @@ class HashtagsController < ApplicationController
 
   def show
     @hashtag = Hashtag.find_by!(hashname: params[:hashname])
-    @photos = @hashtag.photos.page(params[:page]).per(10)
+    @photos = @hashtag.photos.page(params[:page]).per(12)
   end
 
   def search

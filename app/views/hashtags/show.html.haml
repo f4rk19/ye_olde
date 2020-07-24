@@ -9,10 +9,10 @@
     .main__images-box
       - @photos.each do |photo|
         .image-box
-          =link_to photo_path(photo.id) do
-            = image_tag photo.image.url(:thumb), class: 'image-box-image'
-            %p.photo-frame__content
-              = render_with_hashtags(photo.content)
+          %figure
+            =link_to photo_path(photo.id) do
+              = image_tag photo.image.url(:thumb), class: 'image-box-image',width:"240px",height:"200px"
+
   = paginate @photos
 
 .footer

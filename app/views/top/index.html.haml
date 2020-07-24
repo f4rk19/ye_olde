@@ -1,6 +1,6 @@
 .header
   - if user_signed_in?
-    =render "olde/header-top"
+    =render "olde/header"
   - else
     %ul.header__user-in
       %li.user-plus
@@ -12,18 +12,16 @@
           = icon('fas', 'sign-in-alt')
           Sign in
 
-.main
+.main-top
   - if user_signed_in?
-    =image_tag "portrait-4130603.jpg", :alt =>"top image",class: "main__image"
-    %p.main__sub-content
+    = image_tag "portrait-4130603.jpg", :alt =>"top image",class: "main-top__image"
+    %p.main-top__sub-content
       We can go back to that place.
 
   - else
-    = image_tag "vintage-2809976_1920.jpg", :alt =>"top image",class: "main__image"
-    %p.main__sub-content
+    = image_tag "vintage-2809976_1920.jpg", :alt =>"top image",class: "main-top__image"
+    %p.main-top__sub-content
       A place that you don't know...
-  %p.main__title
+  %p.main-top__title
     Ye Olde
-  .main__search-form
-    = render 'olde/search'
 .footer
