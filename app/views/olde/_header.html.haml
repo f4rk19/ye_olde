@@ -5,6 +5,10 @@
       Ye Olde
   .search-form
     =render 'olde/search'
+  .hashtags-map
+    =link_to olde_map_path do
+      =icon("fas","globe-americas")
+      Map
 -if user_signed_in?
   .header__drop-menu
     .drop-btn

@@ -21,12 +21,21 @@
 }
 
 .main{
-  background-color: lightblue;
   height: calc(100vh - 110px);
   position: relative;
   &__image{
       width: 100vw;
       height: 100vh;
+  }
+  &__title{
+    position:absolute;
+    top:27px;
+    left: 46vw;
+    font-family: fantasy;
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
   }
   &__sub-content{
     position: absolute;
@@ -39,7 +48,7 @@
   &__search-form{
     position: absolute;
     top: 20%;
-    left: 37%;
+    left: 43%;
   }
 }
 

@@ -9,6 +9,6 @@
     .detail-form
       =link_to photo_path(@photo.id) do
         Detail
-  = image_tag @photo.image.url, class: 'photo-frame__image'
-  %p.photo-frame__content
-    = render_with_hashtags(@photo.content)
+      = image_tag @photo.image.url, class: 'photo-frame__image'
+      %p.photo-frame__content
+        = render_with_hashtags(@photo.content)

@@ -20,11 +20,33 @@
     }
     .search-form{
       position: absolute;
-      top: 3px;
-      left: 50px;
-      width: 500px;
+      top: 5px;
+      left: 100px;
+      width: 400px;
       padding-left: 20px;
       padding-bottom: 5px;
+    }
+    .hashtags-map{
+      position: absolute;
+      top: 11px;
+      left: 383px;
+      font-size: 17px;
+      font-family: fantasy;
+      a{
+        text-decoration: none;
+        color: #ffffff;
+      }
+    }
+    .hashtags-map-top{
+      position: absolute;
+      top: 11px;
+      left: 120px;
+      font-size: 17px;
+      font-family: fantasy;
+      a{
+        text-decoration: none;
+        color: #ffffff;
+      }
     }
   }
   &__drop-menu{
@@ -71,14 +93,8 @@
   overflow: scroll;
   background-color: whitesmoke;
   z-index: 1;
-  &__hashtag-map{
-    img{
-      height: 100%;
-      width: 100vw;
-      position: absolute;
-    }
-  }
 }
+
 
 .footer{
   height: 30px;
@@ -89,29 +105,50 @@
 
 .search-form{
   width: 40vw;
+  display: flex;
+  position: relative;
   &__text{
     padding: 5px;
     font-family: fantasy;
-    width: 65%;
+    width: 250px;
     border-radius: 5px;
     border: 0.3px inset lightslategray;
   }
   #search-result{
-    width: 65%;
+    width: 250px;
     background-color: #ffffff;
     border: 0.3px inset lightslategray;
     border-radius: 3px;
     font-size: 16px;
     font-family: fantasy;
     opacity: 0.8;
-    .Hashtag__search{
-      text-decoration: none;
-      padding: 5px;
-      color: black;
+    .Hashtag{
+      .Hashtag__search{
+        text-decoration: none;
+        padding: 5px;
+        color: black;
+      }
+      .fa-search{
+        font-size: 12px;
+        padding-left:  5px;
+      }
     }
-    .fa-search{
-      font-size: 12px;
-      padding-left:  5px;
+  }
+}
+
+//map
+.main{
+  &__hashtag-map{
+    position: relative;
+    .back__image{
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+    }
+    .map__image{
+      position: absolute;
+      top:20px;
+      left: 30px;
     }
   }
 }

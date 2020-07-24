@@ -11,7 +11,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.create(photo_params)
     if @photo.save
-      redirect_to root_path, notice: "Completed"
+      redirect_to user_path(current_user), notice: "Completed"
     else
       flash.now[:alert] = "Uncompleted"
       render new_photo_path
@@ -35,7 +35,12 @@ class PhotosController < ApplicationController
 
   def update
     photo = Photo.find(params[:id])
-    photo.update(photo_params)
+    if photo.update(photo_params)
+      redirect_to user_path(current_user), notice: "Completed"
+    else
+      flash.now[:alert] = "Uncompleted"
+      render edit_photo_path
+    end
   end
 
   def show
