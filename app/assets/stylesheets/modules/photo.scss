@@ -73,27 +73,42 @@
 // _photo
 .photo-frame{
   width: 80vw;
-  background-color: #ffffff;
   border: 1px solid black;
   margin : auto;
   margin-bottom: 10px;
   &__photo-info{
-    display: flex;
     background-color: lightslategrey;
+    position: relative;
     .user-name{
-      font-size: 20px;
+      font-size: 25px;
       font-weight: bold;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       text-align: start;
       padding-top: 30px;
       padding-left: 30px;
+      padding-bottom: 10px;
+      a{
+        text-decoration: none;
+        color: #ffffff;
+      }
     }
     .created-at{
       font-size: 12px;
       color: lightgray;
     }
-    .detail-form{
-      margin-left:20px;
+    .photo-edit{
+      position: absolute;
+      top: 20px;
+      right:20px;
+      display: flex;
+      .edit-form, .delete-btn{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        a{
+          text-decoration: none;
+          padding-left: 10px;
+          color: #ffffff;
+        }
+      }
     }
   }
   &__image{
@@ -104,6 +119,6 @@
     font-size: 16px;
     border: 1px solid black;
     height:50px;
-    border: 1px solid black;
+    background-color: #ffffff;
   }
 }

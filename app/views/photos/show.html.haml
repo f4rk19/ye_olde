@@ -2,14 +2,7 @@
   = render 'olde/header'
 .main
   .main__photos
-    %h2 Photo
+    %h2 Photo detail
     = render 'photo'
-    -if user_signed_in? && current_user.id == @photo.user_id
-      %ul.photo-edit
-        %li.edit-form
-          =link_to edit_photo_path do
-            Edit
-        %li.delete-btn
-          =link_to photo_path, method: :delete do
-            Delete
+
 .footer
