@@ -45,13 +45,10 @@
     font-size: 36px;
     color: #ffffff;
   }
-  &__search-form{
+  .search-form{
     position: absolute;
     top: 20%;
     left: 43vw;
-    #search-result{
-      background-color: green($color: #000000);
-    }
   }
 }
 

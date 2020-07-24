@@ -1,6 +1,6 @@
 .header
   - if user_signed_in?
-    =render "olde/header"
+    =render "olde/header-top"
   - else
     %ul.header__user-in
       %li.user-plus
@@ -24,4 +24,7 @@
       A place that you don't know...
   %p.main-top__title
     Ye Olde
+  .top-search-form
+    .search-form
+      =render 'olde/search'
 .footer

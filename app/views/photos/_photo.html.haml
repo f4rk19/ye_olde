@@ -6,9 +6,17 @@
         = @photo.user.name
     .created-at
       = l @photo.created_at
+    -if user_signed_in? && current_user.id == @photo.user_id
+      %ul.photo-edit
+        %li.edit-form
+          =link_to edit_photo_path do
+            =icon("fas","edit")
+            Edit
+        %li.delete-btn
+          =link_to photo_path, method: :delete do
+            =icon("fas","trash-alt")
+            Delete
     .detail-form
-      =link_to photo_path(@photo.id) do
-        Detail
       = image_tag @photo.image.url, class: 'photo-frame__image'
       %p.photo-frame__content
         = render_with_hashtags(@photo.content)
