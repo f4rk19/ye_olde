@@ -1,0 +1,27 @@
+.pagination{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  span{
+    background-color: rgba(217, 217, 217, 0.4);
+    text-align: center;
+    width: 50px;
+    border: solid 1px #344963;
+    border-radius: 3px;
+    color: rgb(197, 20, 159);
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  span:hover{
+    transition: .3s;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  span a:hover{
+    transition: .3s;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+}

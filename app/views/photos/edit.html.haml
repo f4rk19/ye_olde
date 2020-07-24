@@ -1,2 +1,18 @@
 .header
   = render 'olde/header'
+.main
+  .main__photo-form
+    = form_with model: @photo, local: true do |f|
+      .photo-box
+        = f.label :image, class: 'photo-box__image' do
+          =icon('fas', 'image')
+          =f.file_field :image, type: 'file', class: 'photo-box__image__file'
+          %p "Choose your photo"
+
+      .input-box
+        = f.text_area :content, class: 'input-box__text', placeholder: "Type a message"
+
+      = f.submit 'Edit', class: 'submit-btn'
+
+
+.footer

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   get '/hashtags/:hashname', to: 'hashtags#show'
-
+  get '/olde/map', to: 'olde#map'
   get '/photos/:id/:user_id', to: 'photos#show'
   get '/photos/hashtags/:name', to: "photos#hashtags"
 end
