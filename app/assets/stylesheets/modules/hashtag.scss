@@ -1,19 +1,28 @@
 .main{
   h2{
-    font-size:40px;
-    font-family: fantasy;
+    text-align: center;
+    margin: 20px 0;
+    font-size:50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
   &__images-box{
     display: grid;
-    grid-template-columns: ;
-    height: 100vh;
-    width: 100vh;
-    .image-box{
-      width: 30px;
-      height: 20px;
-      padding: 10px;
-      margin: 10px;
-      align-content: stretch;
+    grid-template-columns: repeat(4, 240px);
+    grid-template-rows: repeat(6, 200px);
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    .image-box a{
+      display: block;
+      box-shadow: 0 2px 4px rgba(3,3,3,.09);
+      border-radius: 3px;
+    }
+    .image-box a:hover {
+      display: block;
+      box-shadow: 0 8px 12px rgba(0,0,0,.12);
+      border-radius: 3px;
+      margin-top:-5px;
     }
   }
+
 }

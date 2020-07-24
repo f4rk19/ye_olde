@@ -14,7 +14,7 @@
         text-decoration: none;
         color: white;
         font-size: 15px;
-        font-family: fantasy;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         padding-right: 5px;
       }
     }
@@ -31,7 +31,7 @@
       top: 11px;
       left: 383px;
       font-size: 17px;
-      font-family: fantasy;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       a{
         text-decoration: none;
         color: #ffffff;
@@ -42,7 +42,7 @@
       top: 11px;
       left: 120px;
       font-size: 17px;
-      font-family: fantasy;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       a{
         text-decoration: none;
         color: #ffffff;
@@ -78,7 +78,7 @@
           text-decoration: none;
           color: white;
           font-size: 15px;
-          font-family: fantasy;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
       }
       .back-btn{
@@ -107,9 +107,10 @@
   width: 40vw;
   display: flex;
   position: relative;
+  padding-top: 3px;
   &__text{
     padding: 5px;
-    font-family: fantasy;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 250px;
     border-radius: 5px;
     border: 0.3px inset lightslategray;
@@ -120,7 +121,7 @@
     border: 0.3px inset lightslategray;
     border-radius: 3px;
     font-size: 16px;
-    font-family: fantasy;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     opacity: 0.8;
     .Hashtag{
       .Hashtag__search{

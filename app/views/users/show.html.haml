@@ -4,21 +4,13 @@
   .main__photos
     %h2
       = @name
-    .photo-frames
+    .main__images-box
       - @photos.each do |photo|
-        .photo-frame
-          .photo-frame__photo-info
-            .user-name
-              User name :
-              = link_to user_path(@user) do
-                = photo.user.name
-            .created-at
-              = l photo.created_at
-            .detail-form
-              =link_to photo_path(photo.id) do
-                Detail
-          = image_tag photo.image.url, class: 'photo-frame__image'
-          %p.photo-frame__content
-            = render_with_hashtags(photo.content)
-      = paginate @photos
+        .image-box
+          %figure
+            =link_to photo_path(photo.id) do
+              = image_tag photo.image.url(:thumb), class: 'image-box-image',width:"240px",height:"200px"
+
+  = paginate @photos
+
 .footer

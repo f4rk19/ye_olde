@@ -14,22 +14,22 @@
         text-decoration: none;
         color: #ffffff;
         font-size: 18px;
-        font-family: fantasy;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       }
     }
   }
 }
 
-.main{
+.main-top{
   height: calc(100vh - 110px);
   position: relative;
   &__image{
-      width: 100vw;
-      height: 100vh;
+    width: 100%;
+    height: 100%;
   }
   &__title{
     position:absolute;
-    top:27px;
+    top:5%;
     left: 46vw;
     font-family: fantasy;
     font-size: 50px;
@@ -48,7 +48,10 @@
   &__search-form{
     position: absolute;
     top: 20%;
-    left: 43%;
+    left: 43vw;
+    #search-result{
+      background-color: green($color: #000000);
+    }
   }
 }
 
