@@ -24,8 +24,8 @@ class Photo < ApplicationRecord
   end
 
 
-  validates :content, presence: true
-  validates :image, presence: true
+  validates :content, {presence: true, length: {maximum: 140}}
+  validates :image,{ presence: true}
 
   mount_uploader :image, ImageUploader
 end
