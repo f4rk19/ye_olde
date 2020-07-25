@@ -73,11 +73,13 @@
 // _photo
 .photo-frame{
   width: 80vw;
-  border: 1px solid black;
+  border: 2px solid black;
+  border-radius: 5px;
   margin : auto;
   margin-bottom: 10px;
   &__photo-info{
-    background-color: lightslategrey;
+    background-color: #1c1d1d;
+    background-image: linear-gradient(180deg, #1c1d1d 0%, #919494 50%, #ffffff 100%);
     position: relative;
     .user-name{
       font-size: 25px;
@@ -120,5 +122,90 @@
     border: 1px solid black;
     height:50px;
     background-color: #ffffff;
+  }
+}
+
+//comment
+.main{
+  &__comments{
+    position: relative;
+    .input-comment{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      left:16vw;
+      width: 60vw;
+      height: 120px;
+      text-align: center;
+      .textbox{
+        height: 80px;
+        padding: 15px;
+        border: none;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .submitbtn{
+        position: absolute;
+        left:38%;
+        bottom: 4%;
+        width: 100px;
+        padding: 3px;
+        color: oldlace;
+        background-color: slategrey;
+        font-size: 15px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+    }
+    .comments-show{
+      position: absolute;
+      top: 150px;
+      left:23%;
+      width: 50vw;
+      margin-bottom: 15px;
+      h4{
+        font-size: 30px;
+        border-bottom:1px solid hotpink;
+        margin-bottom: 15px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .comment-box{
+        border: 1px solid black;
+        border-radius: 5px;
+        height:100px;
+        .comment-info{
+          padding: 3px;
+          display: flex;
+          justify-content: space-around;
+          background-color: #fdeaea;
+          background-image: linear-gradient(0deg, #fdeaea 0%, #ffd2d2 50%, #FAACA8 100%);
+          .comment-user{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          }
+          .comment-date{
+            font-size: 11px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: lightslategrey;
+          }
+          time{
+            font-size: 11px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: lightslategrey;
+          }
+          .comment-delete{
+            font-size: 13px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          }
+          a{
+            text-decoration: none;
+            color: black;
+          }
+        }
+        .comment-text{
+          padding: 5px;
+          font-size: 18px;
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+      }
+    }
   }
 }

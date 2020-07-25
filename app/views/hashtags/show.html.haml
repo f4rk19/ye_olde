@@ -5,6 +5,7 @@
     %p No List
   - else
     %h2
+      =icon("fas","hashtag")
       = @hashtag.hashname
     .main__images-box
       - @photos.each do |photo|

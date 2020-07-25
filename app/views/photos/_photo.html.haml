@@ -5,7 +5,9 @@
       = link_to user_path(@user) do
         = @photo.user.name
     .created-at
-      = l @photo.created_at
+      = @photo.created_at.strftime("%Y/%m/%d %H:%M")
+      It's
+      %time(datetime="#{@photo.created_at}")= time_ago_in_words(@photo.created_at) + " ago"
     -if user_signed_in? && current_user.id == @photo.user_id
       %ul.photo-edit
         %li.edit-form
