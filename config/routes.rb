@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root  'top#index'
   resources :top, :only => :index
   resources :users, only:[:index, :edit, :update, :show, :destroy]
-  resources :photos
+  resources :photos do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :hashtags, :except => :show do
     collection do
       get 'search'
@@ -11,6 +13,6 @@ Rails.application.routes.draw do
   end
   get '/hashtags/:hashname', to: 'hashtags#show'
   get '/olde/map', to: 'olde#map'
-  get '/photos/:id/:user_id', to: 'photos#show'
+  # get '/photos/:id/:user_id', to: 'photos#show'
   get '/photos/hashtags/:name', to: "photos#hashtags"
 end

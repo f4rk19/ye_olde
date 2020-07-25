@@ -36,7 +36,7 @@ class PhotosController < ApplicationController
   def update
     photo = Photo.find(params[:id])
     if photo.update(photo_params)
-      redirect_to user_path(current_user), notice: "Completed"
+      redirect_to photo_path(params[:id]), notice: "Completed"
     else
       flash.now[:alert] = "Uncompleted"
       render edit_photo_path
@@ -46,6 +46,8 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @user = @photo.user
+    @comment = Comment.new
+    @comments = @photo.comments.includes(:user)
   end
 
   def hashtags
