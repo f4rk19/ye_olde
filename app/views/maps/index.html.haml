@@ -1,0 +1,11 @@
+.header
+  =render "olde/header"
+.main
+  %h2 google map
+  %input#address{:type => "textbox", :value => "GeekSalon"}/
+  %input{:onclick => "codeAddress()", :type => "button", :value => "Encode"}/
+  #display 何かが表示される、、、、！</div>
+  #map
+.footer
+
+%script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=#{ENV["GOOGLE_MAP_API_KEY"]}&callback=initMap", :type => "text/javascript"}

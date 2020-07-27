@@ -1,0 +1,22 @@
+.header__drop-menu
+  .drop-btn
+    =icon("fas","bars")
+  %ul.drop-down
+    %li.back-btn
+      =icon("fas","times")
+    %li.user-name
+      =link_to user_path(current_user) do
+        =icon("far","user-circle")
+        =current_user.name
+    %li.new-post
+      = link_to new_photo_path do
+        =icon("fas","feather-alt")
+        To Post
+    %li.edit-btn
+      =link_to edit_user_path(current_user) do
+        =icon("fas","user-edit")
+        Edit user
+    %li.sign-out
+      =link_to  destroy_user_session_path,method: :delete do
+        =icon("fas","sign-out-alt")
+        Sign out

@@ -10,9 +10,7 @@
         margin: 20px;
         border: 2px solid black;
         border-radius: 10px;
-        height: 300px;
-        width: 360px;
-        padding: 30px 0;
+        padding: 20px 0;
         position: relative;
         i{
           font-size: 50px;
@@ -134,7 +132,6 @@
   &__comments{
     position: relative;
     p{
-      text-align: center;
       font-size: 19px;
     }
     .show-user-in{

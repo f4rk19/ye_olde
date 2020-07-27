@@ -5,7 +5,7 @@
     = form_with model: @photo, local: true do |f|
       .photo-box
         = f.label :image, class: 'photo-box__image' do
-          =icon('fas', 'image')
+          =icon('fas', 'image',class: 'image-icon')
           =f.file_field :image, type: 'file', class: 'photo-box__image__file'
           %p "Choose your photo"
 

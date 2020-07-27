@@ -16,7 +16,9 @@ $(function(){
                   </div>
                 </div>
                 <div class="comment-text">
-                  ${comment.text}
+                  <p>
+                    ${comment.text}
+                  </p>
                 </div>
               </div>
                `

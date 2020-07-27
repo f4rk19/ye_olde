@@ -8,7 +8,7 @@ class OldeController < ApplicationController
     @hashtags = Hashtag.search(params[:keyword])
   end
 
-  def map
+  def maplist
   end
 
 end

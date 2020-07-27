@@ -5,38 +5,6 @@
     %h2 Photo detail
     = render 'photo'
   .main__comments
-    -if current_user
-      =form_with model: [@photo,@comment], html:{class: "input-comment"}, local:true do |f|
-        =f.text_area :text, placeholder: "Write a comment...", rows:"2",class:"textbox"
-        =f.submit "Post",class:"submitbtn"
-    -else
-      %p *** You need to "Sign up" or "Sign in" for write a comment. ***
-      %ul.show-user-in
-        %li.show-user-plus
-          =link_to new_user_registration_path do
-            = icon('fas', 'user-plus')
-            New user registration
-        %li.show-sign-in
-          =link_to user_session_path do
-            = icon('fas', 'sign-in-alt')
-            Sign in
-    .comments-show
-      %h4 Comment field
-      -if @comments
-        - @comments.each do |comment|
-          .comment-box
-            .comment-info
-              = link_to "/users/#{comment.user_id}" do
-                .comment-user
-                = comment.user.name
-              .comment-date
-                = @photo.created_at.strftime("%Y/%m/%d %H:%M")
-              %time(datetime="#{@photo.created_at}")= time_ago_in_words(@photo.created_at) + " ago"
-              -if current_user == comment.user
-                .comment-delete
-                  = link_to "Delete",photo_comment_path(@photo,comment),method: :Delete
-            .comment-text
-              = simple_format(comment.text)
-
+    =render 'comments/comments'
 
 .footer
