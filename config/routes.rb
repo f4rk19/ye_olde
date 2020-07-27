@@ -11,8 +11,9 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :maps, only: :index
   get '/hashtags/:hashname', to: 'hashtags#show'
-  get '/olde/map', to: 'olde#map'
+  get '/olde/maplist', to: 'olde#maplist'
   # get '/photos/:id/:user_id', to: 'photos#show'
   get '/photos/hashtags/:name', to: "photos#hashtags"
 end

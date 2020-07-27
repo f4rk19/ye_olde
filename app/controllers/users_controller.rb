@@ -8,15 +8,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
-    if current_user.update(user_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
     if params[:image]
       @user.image = "{@user.id}.jpg"
       image = params[:image]
       File.binwrite("public/user_images/#{@user.image}",image.read)
+    end
+    if current_user.update(user_params)
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 

@@ -12,7 +12,7 @@
         .image-box
           %figure
             =link_to photo_path(photo.id) do
-              = image_tag photo.image.url(:thumb), class: 'image-box-image',width:"240px",height:"200px"
+              = image_tag photo.image.url(:thumb), class: 'image-box-image',data:{id: photo.id},width:"240px",height:"200px"
 
   = paginate @photos
 

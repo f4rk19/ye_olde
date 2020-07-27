@@ -22,9 +22,9 @@ class PhotosController < ApplicationController
     photo = Photo.find(params[:id])
     if photo.user_id == current_user.id
       if photo.destroy
-        redirect_to  hashtags_path, notice: "comleted"
+        redirect_to  user_path(current_user), notice: "comleted"
       else
-        redirect_to hashtags_path, alert: "uncompleted"
+        redirect_to user_path(current_user), alert: "uncompleted"
       end
     end
   end
@@ -48,6 +48,10 @@ class PhotosController < ApplicationController
     @user = @photo.user
     @comment = Comment.new
     @comments = @photo.comments.includes(:user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def hashtags

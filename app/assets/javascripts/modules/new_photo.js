@@ -16,6 +16,7 @@
         var html = buildHTML(image)
         $('.photo-box__image').prepend(html);
         $('p').remove();
+        $('.image-icon').remove();
       }
     });
   });
