@@ -10,7 +10,15 @@
           %p "Choose your photo"
 
       .input-box
-        = f.text_area :content, class: 'input-box__text', placeholder: "Type a message"
+        = f.text_area :content, class: 'input-box__text', placeholder: "Type a message..."
+        = f.label :descripton do
+          =icon("fas","search-location", id: "searchAddressBtn")
+          = f.text_field :description, class:'input-box__description',placeholder:"Search a description..."
+      .map-area
+        #map{:style => "width: 400px; height: 300px;"}
+      .description-box
+        = f.text_field :latitude, id:"post_latitude",readonly:"readonly"
+        = f.text_field :longitude,id:"post_longitude", readonly:"readonly"
 
       = f.submit 'Post', class: 'submit-btn'
 

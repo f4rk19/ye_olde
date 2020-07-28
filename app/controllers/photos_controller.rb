@@ -48,6 +48,7 @@ class PhotosController < ApplicationController
     @user = @photo.user
     @comment = Comment.new
     @comments = @photo.comments.includes(:user)
+    gon.photo = @photo
     respond_to do |format|
       format.html
       format.json
@@ -64,7 +65,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:content, :image).merge(user_id: current_user.id)
+    params.require(:photo).permit(:content, :image,:latitude,:longitude,:description).merge(user_id: current_user.id)
   end
 
 end
