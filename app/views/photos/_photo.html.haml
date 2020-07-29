@@ -18,6 +18,8 @@
           =link_to photo_path, method: :delete do
             =icon("fas","trash-alt")
             Delete
+    #bookmark-btn
+      =render "bookmarks/bookmark"
     .detail-form
       = image_tag @photo.image.url, class: 'photo-frame__image'
       .photo-frame__content

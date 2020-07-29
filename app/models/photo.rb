@@ -3,6 +3,7 @@ class Photo < ApplicationRecord
   has_many :photo_hashtags, dependent: :delete_all
   has_many :hashtags, through: :photo_hashtags
   has_many :comments
+  has_many :bookmarks, dependent: :destroy
 
   after_create do
     photo = Photo.find_by(id: self.id)

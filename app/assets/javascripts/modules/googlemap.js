@@ -72,22 +72,3 @@ $(function(){
     $(".main__map-area").removeClass('is-show')
   })
 });
-
-
-
-// // 店舗ページで地図を表示
-// $(function(){
-//   handler = Gmaps.build('Google');
-//   handler.buildMap({ provider: { scrollwheel: false }, internal: {id: 'map1'}}, function(){
-//     markers = handler.addMarkers([
-//       {
-//         "lat": gon.shop.latitude,
-//         "lng": gon.shop.longitude,
-//     "infowindow": '<p>'+ gon.shop.shop_name +'</p><p>'+ gon.shop.city_address +'</p><p> link_to "Googleマップで見る" ,"https://maps.google.co.jp/maps?q=loc:'+ gon.shop.latitude +','+ gon.shop.longitude +'&iwloc=J",target: "_blank"</p>'
-//       }
-//     ]);
-//     handler.bounds.extendWith(markers);
-//     handler.fitMapToBounds();
-//     handler.getMap().setZoom(16);
-//   });
-// });
