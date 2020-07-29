@@ -1,6 +1,6 @@
+.drop-btn
+  =icon("fas","bars")
 .header__drop-menu
-  .drop-btn
-    =icon("fas","bars")
   %ul.drop-down
     %li.back-btn
       =icon("fas","times")
@@ -20,3 +20,7 @@
       =link_to  destroy_user_session_path,method: :delete do
         =icon("fas","sign-out-alt")
         Sign out
+    %li.user-search
+      = form_with method: :get, local: true do |f|
+        = f.text_field :keyword, class:'search-form-user', placeholder:'looking for friends?'
+        #search-result-user

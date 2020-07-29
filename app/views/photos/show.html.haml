@@ -4,14 +4,15 @@
   .main__photos
     %h2 Photo detail
     = render 'photo'
-  .main__show-map
-    =icon("fas","map-marker-alt")
-    =@photo.description
-  .main__map-area
-    #map{:style => "width: 100%; height: 100%;"}
-    .return-btn
-      =icon("fas","times")
-      Close
+  -if @photo.description.present?
+    .main__show-map
+      =icon("fas","map-marker-alt")
+      =@photo.description
+    .main__map-area
+      #map{:style => "width: 100%; height: 100%;"}
+      .return-btn
+        =icon("fas","times")
+        Close
   .main__comments
     =render 'comments/comments'
 
