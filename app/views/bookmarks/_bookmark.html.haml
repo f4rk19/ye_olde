@@ -1,0 +1,8 @@
+-if current_user.bookmarks.find_by(photo_id: @photo.id)
+  =link_to photo_bookmark_path(@photo),method: :delete,class:"bookmark-remove" do
+    =icon("fas","heart")
+    Remove from bookmark
+- else
+  =link_to photo_bookmarks_path(@photo), method: :post, class:"bookmark-add" do
+    =icon("far","heart")
+    Add to bookmark

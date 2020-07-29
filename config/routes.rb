@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   root  'top#index'
   resources :top, :only => :index
-  resources :users, only:[:index, :edit, :update, :show, :destroy]
+  resources :users, only:[:index, :edit, :update, :show, :destroy] do
+    resources :bookmarks, only: :index
+  end
   resources :photos do
     resources :comments, only: [:create, :destroy]
+    resources :bookmarks, only: [:create, :destroy]
   end
   resources :hashtags, :except => :show do
     collection do

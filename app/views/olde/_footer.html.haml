@@ -1,2 +1,8 @@
 .about-me
-  %p about me
+  =icon("far","men-blank")
+  %p.about-me-tag about me
+  .about-me__show
+    =render "olde/about-me"
+    .return-btn
+      =icon("fas","times")
+      Close

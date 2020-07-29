@@ -1,0 +1,18 @@
+.header
+  = render 'olde/header'
+.main
+  %h2
+    = icon("far","user-circle")
+    = @user.name
+  %h2
+    =icon("far","heart")
+    Bookmark
+  .main__images-box
+    - @bookmark_photos.each do |photo|
+      .image-box
+        %figure
+          =link_to photo_path(photo.id) do
+            = image_tag photo.image.url(:thumb), class: 'image-box-image',data:{id: photo.id},width:"240px",height:"200px"
+
+.footer
+  =render "olde/footer"
