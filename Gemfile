@@ -73,3 +73,7 @@ gem 'dotenv'
 gem 'dotenv-rails'
 gem 'gmaps4rails'
 gem 'gon'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
