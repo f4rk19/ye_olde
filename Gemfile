@@ -78,6 +78,7 @@ gem 'dotenv'
 gem 'dotenv-rails'
 gem 'gmaps4rails'
 gem 'gon'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
