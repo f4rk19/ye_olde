@@ -6,7 +6,7 @@ lock '3.14.1'
 set :application, 'ye_olde'
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:f4rk19/ye-olde.git'
+set :repo_url,  'git@github.com:f4rk19/ye_olde.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
