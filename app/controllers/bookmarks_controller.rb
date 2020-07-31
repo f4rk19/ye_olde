@@ -5,8 +5,6 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.where(user_id: current_user.id).all
     @user = current_user
     @bookmark_photos = @user.bookmark_photos.order(created_at: "DESC").page(params[:page]).per(24)
-    @q = current_user.bookmark_photos.ransack(params[:q])
-    @boards = @q.result.includes(:user).page(params[:page])
   end
 
   def create
