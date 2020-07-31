@@ -6,7 +6,10 @@
       =icon("fas","times")
     %li.user-name
       =link_to user_path(current_user) do
-        =icon("far","user-circle")
+        -if current_user.image.present?
+          =image_tag current_user.image.url, class:"user-image"
+        -else
+          =icon("far","user-circle")
         =current_user.name
     %li.new-post
       = link_to new_photo_path do

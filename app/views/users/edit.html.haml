@@ -17,10 +17,10 @@
           = f.email_field :email
       .FormField
         .FormField__label--normal
-          = f.label :image do
-            = icon("far","user-circle")
-            = f.file_field :image, class: 'file-choose'
-            %p"Choose your picture"
+          = f.label :image, class: "photo-box__user-image" do
+            = icon("far","user-circle",class: 'image-icon')
+            = f.file_field :image, class: 'photo-box__user-image__file'
+            %p"Change your picture"
       = f.submit "Update", class: 'Button UserButton'
   .AccountPage__close
     = link_to root_path do

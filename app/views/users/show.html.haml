@@ -3,8 +3,13 @@
 .main
   .main__photos
     %h2
-      = icon("far","user-circle")
-      = @name
+      -if @user.image.present?
+        =link_to @user.image.url, 'data-lightbox': @user.image do
+          =image_tag @user.image.url, class:"user-image"
+      -else
+        =icon("far","user-circle")
+      %p
+        =@name
     .main__images-box
       - @photos.each do |photo|
         .image-box

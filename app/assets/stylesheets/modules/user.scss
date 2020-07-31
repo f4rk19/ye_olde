@@ -77,6 +77,23 @@
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
       color: #ffffff;
     }
+    .user-image{
+      width:80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+    .photo-box__user-image{
+      display: flex;
+      cursor: pointer;
+      .user-image{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+      }
+      &__file{
+        display: none;
+      }
+    }
   }
   &__input--normal {
     input {
@@ -152,5 +169,10 @@
 .main{
   &__photos :not(.photo-frame__content){
     text-align: center;
+    .user-image{
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
   }
 }

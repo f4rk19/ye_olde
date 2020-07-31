@@ -7,6 +7,11 @@
   %h2
     =icon("far","heart")
     Bookmark
+  -# .main__search-bookmark
+  -#   = form_with method: :get, local: true do |f|
+  -#     = f.text_field :keyword, class:'search-form__bookmark', placeholder:'What are your interests?'
+  -#     = f.submit "Search", class: "search-bookmark-btn"
+  -#     #search-result-bookmark
   .main__images-box
     - @bookmark_photos.each do |photo|
       .image-box

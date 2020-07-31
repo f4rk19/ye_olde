@@ -9,15 +9,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    user = User.find(params[:id])
+    @image = user.image
   end
 
   def update
     @user = User.find_by(id: params[:id])
-    if params[:image]
-      @user.image = "{@user.id}.jpg"
-      image = params[:image]
-      File.binwrite("public/user_images/#{@user.image}",image.read)
-    end
     if current_user.update(user_params)
       redirect_to root_path
     else
@@ -29,6 +26,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @photos = @user.photos.order(created_at: "DESC").page(params[:page]).per(24)
     @name = @user.name
+    @image = @user.image
   end
 
   private
