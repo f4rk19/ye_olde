@@ -2,8 +2,13 @@
   = render 'olde/header'
 .main
   %h2
-    = icon("far","user-circle")
-    = @user.name
+    -if @user.image.present?
+      =link_to @user.image.url, 'data-lightbox': @user.image do
+        =image_tag @user.image.url, class:"user-image"
+    -else
+      =icon("far","user-circle")
+    %p
+      =@name
   %h2
     =icon("fas","heart")
     Bookmark
