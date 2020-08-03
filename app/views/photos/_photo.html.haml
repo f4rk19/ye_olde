@@ -22,6 +22,7 @@
       #bookmark-btn
         =render "bookmarks/bookmark"
     .detail-form
-      = image_tag @photo.image.url, class: 'photo-frame__image'
+      = link_to @photo.image.url, 'data-lightbox': @photo.image do
+        = image_tag @photo.image.url, class: 'photo-frame__image'
       .photo-frame__content
         = simple_format(render_with_hashtags(@photo.content))
